@@ -24,8 +24,7 @@ public class MovieCopy extends JFrame implements ActionListener{
 	
 	JFileChooser chooser;
 	FileInputStream fis;
-	FileOutputStream fos;
-	
+	FileOutputStream fos;	
 	int fileSize;
 	
 	public MovieCopy() {
@@ -38,7 +37,7 @@ public class MovieCopy extends JFrame implements ActionListener{
 		path_ori=new JTextField(33);
 		path_dest=new JTextField(33);		
 
-		chooser=new JFileChooser("D:/git/java_workspace/project_day032/src/com/ss/res");
+		chooser=new JFileChooser("E:/git/java_workspace/project_day032/src/com/ss/res");
 		
 		bar.setPreferredSize(new Dimension(450, 30));
 		
@@ -70,8 +69,8 @@ public class MovieCopy extends JFrame implements ActionListener{
 	}
 	
 	public void open(){
-		chooser.showOpenDialog(this);
-		if(JFileChooser.APPROVE_OPTION==0){
+		int state=chooser.showOpenDialog(this);//탐색기창 열어주고 선택하면 0이반환된다.
+		if(state==JFileChooser.APPROVE_OPTION){
 			File file=chooser.getSelectedFile();
 			fileSize=(int)file.length(); //파일용량   x=100*읽/총			
 			System.out.println(fileSize);
@@ -80,8 +79,8 @@ public class MovieCopy extends JFrame implements ActionListener{
 	}
 	
 	public void save(){
-		chooser.showOpenDialog(this);
-		if (JFileChooser.APPROVE_OPTION==0) {
+		int state=chooser.showOpenDialog(this);
+		if (state==JFileChooser.APPROVE_OPTION) {
 			path_dest.setText(chooser.getSelectedFile().getPath());
 		}	
 	}
@@ -92,7 +91,7 @@ public class MovieCopy extends JFrame implements ActionListener{
 			fis=new FileInputStream(path_ori.getText());
 			fos=new FileOutputStream(path_dest.getText());
 			
-			ProgressBarThread pbt=new ProgressBarThread(this, bar, 300, fis, fos);
+			ProgressBarThread pbt=new ProgressBarThread(this);
 			/*
 			while (true) {
 				int data = fis.read();

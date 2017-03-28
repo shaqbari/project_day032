@@ -38,7 +38,7 @@ public class MultiAni extends JFrame{
 		bt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Graphics g=can.getGraphics(); //캔버스가 보유하고 있는 그래픽을 넘긴다.
-				//ct=new CircleThread(gp, 0, 0, 50, 50); //쓰레드 생성을 버튼누른뒤에 해야 캔버스보다 늦게 생성되어g를 넘길 수 있따. 
+				//ct=new CircleThread(gp, 0, 0, 50, 50); //쓰레드 생성을 버튼누른뒤에 해야 캔버스보다 늦게 생성되어g를 넘길 수 있다. 
 				//ct.start();
 				
 				//for(int i=0; i<5; i++){
@@ -54,8 +54,7 @@ public class MultiAni extends JFrame{
 		setSize(700, 600);
 		setVisible(true);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-	}
-	
+	}	
 	
 	public static void main(String[] args) {
 		new MultiAni();
