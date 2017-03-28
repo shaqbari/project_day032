@@ -20,6 +20,8 @@ abstract public class ShapeThread extends Thread{
 		this.width=width;
 		this.height=height;
 		this.interval=interval;
+		
+		start();
 	}
 	
 	abstract public void render(); //추상으로 남겨둬서 자식에서 구현을 강제

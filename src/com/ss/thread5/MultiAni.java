@@ -41,11 +41,13 @@ public class MultiAni extends JFrame{
 				//ct=new CircleThread(gp, 0, 0, 50, 50); //쓰레드 생성을 버튼누른뒤에 해야 캔버스보다 늦게 생성되어g를 넘길 수 있따. 
 				//ct.start();
 				
-				CircleThread ct=new CircleThread(g, 0, 0, 50, 50, 100);
-				ShapeThread st=ct;//이런식으로도 가능				
-				
+				//for(int i=0; i<5; i++){
+					CircleThread ct=new CircleThread(g, 0, 60, 50, 50, 100);
+					RectThread rt=new RectThread(g, 0, 120, 50, 50, 100);
+					//}
+				//ShapeThread st=ct;//이런식으로도 가능				
 				//ct.start(); //Thread를 상속받는 ShapeThread의 start()를 호출
-				st.start();
+				//st.start(); 태어난 녀석 스스로 움직이게 ShapeThread의 생성자에서 호출
 			}
 		});
 		

@@ -13,7 +13,7 @@ public class CircleThread extends ShapeThread{
 	
 	//오버라이드
 	public void render(){
-		System.out.println("g는"+g);
+		//System.out.println("g는"+g);
 		//노란색 페인트로 윈도우에 적용하고
 		g.setColor(Color.YELLOW);//붓으로 노란색을 찍는다.
 		g.fillRect(0, 0, 700, 600); //JFrame크기만큼의 사각형생성해서 지운다.
