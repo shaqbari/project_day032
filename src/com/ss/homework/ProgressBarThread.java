@@ -42,8 +42,12 @@ public class ProgressBarThread extends Thread{
 				if(fos!=null){				
 					fos.close();
 				}
+				if (fis!=null) {//fis도 닫아야 한다.
+					fis.close();
+				}
 				//bar도 초기화할수 있으면 좋겠다
 				bar.setValue(0);
+				JOptionPane.showMessageDialog(movieCopy, "복사완료");
 			} catch (IOException e) {
 				e.printStackTrace();
 				JOptionPane.showMessageDialog(movieCopy, "IO중에러가 발생했습니다.");
